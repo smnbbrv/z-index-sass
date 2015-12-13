@@ -6,13 +6,17 @@ SASS / SCSS helper to handle lots of z-indices in big applications.
 
 Install with bower:
 
-    bower install z-index-sass --save
+```sh
+bower install z-index-sass --save
+```
 
 or just copy the file from lib/z-index.sass.
 
 Then just import the file (you can find it in bower_components folder if installed with bower):
 
+```SCSS
     @import "/path/to/lib/z-index";
+```
 
 ## Why
 
@@ -32,15 +36,17 @@ First you need to initialize the z-index array, then simply use it in **every pl
 
 Create a separate file in your project (e.g. my-z-indices.scss) where you initialize / collect all z-index values. There e.g. you can use the following:
 
-    @import "path/to/lib/z-index"; // imports THIS library
+```SCSS
+@import "path/to/lib/z-index"; // imports THIS library
 
-    @include z-index-init(
-      page-header // creates page-header=1
-      (customSelect customSelectDropbox) // creates customSelect=2 and customSelectDropbox=2
-      (externalLibraryPopup: 1000) // creates externalLibraryPopup=1000
-      myPopup // creates myPopup=1001
-      super-element // creates super-element=1002
-    );
+@include z-index-init(
+  page-header // creates page-header=1
+  (customSelect customSelectDropbox) // creates customSelect=2 and customSelectDropbox=2
+  (externalLibraryPopup: 1000) // creates externalLibraryPopup=1000
+  myPopup // creates myPopup=1001
+  super-element // creates super-element=1002
+);
+```
 
 As you can see you can choose from a variety of naming notations.
 
@@ -48,21 +54,27 @@ As you can see you can choose from a variety of naming notations.
 
 Then include this file where you want to use it and... use it!
 
-    @import "path/to/my-z-indices";
+```SCSS
+@import "path/to/my-z-indices";
 
-    .popup {
-      @include z-index(myPopup);
-    }
+.popup {
+  @include z-index(myPopup);
+}
+```
 
 That will generate
 
-    .popup {
-      z-index: 1001;
-    }
+```CSS
+.popup {
+  z-index: 1001;
+}
+```
 
 ### Initialize first
 
-    @include z-index-init(settingsList[, startFrom]);
+```SCSS
+@include z-index-init(settingsList[, startFrom]);
+```
 
 Where `settingsList` is a list of `zIndexItem`. zIndexItems are generated in the order you provide, `startFrom` is an optional attribute with a default value `1` to specify z-index for the first array item.
 
@@ -75,4 +87,6 @@ Where `settingsList` is a list of `zIndexItem`. zIndexItems are generated in the
 
 The usage is as simple as
 
-    @include z-index(variable-name);
+```SCSS
+@include z-index(variable-name);
+```
