@@ -15,7 +15,7 @@ or just copy the file from lib/z-index.sass.
 Then just import the file (you can find it in bower_components folder if installed with bower):
 
 ```SCSS
-    @import "/path/to/lib/z-index";
+@import "/path/to/lib/z-index";
 ```
 
 ## Why
