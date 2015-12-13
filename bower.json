@@ -1,0 +1,27 @@
+{
+  "name": "z-index-sass",
+  "description": "SASS / SCSS helper to handle lots of z-indices in big applications",
+  "main": "index.js",
+  "authors": [
+    "smnbbrv"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "z-index",
+    "z-index",
+    "map",
+    "sass",
+    "scss"
+  ],
+  "homepage": "https://github.com/smnbbrv/z-index-sass",
+  "moduleType": [
+    "globals"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
