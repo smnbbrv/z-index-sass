@@ -1,0 +1,81 @@
+@import "true";
+
+@include test-module('z-index-sass') {
+  @import "../lib/z-index";
+
+  @include test('z-index-init [mixin]') {
+    @include z-index-init(main-page-header popup popup-overlay);
+    @include assert-equal(length(map-keys($z-index-map)), 3, 'map is populated with 3 items');
+  }
+
+  @include test('z-index [mixin]') {
+    @include assert('get z-index based on the key name') {
+      @include input {
+        @include z-index(main-page-header);
+        @include z-index(popup-overlay);
+      }
+
+      @include expect {
+        z-index: 1;
+        z-index: 3;
+      }
+    }
+  }
+}
+
+@include test-module('z-index-sass extended') {
+  @import "../lib/z-index";
+
+  @include test('z-index-init [mixin]') {
+    @include z-index-init(
+      main-page-header
+      (select selectDropbox)
+      (externalPopup: 100)
+      popup-overlay
+    );
+    @include assert-equal(length(map-keys($z-index-map)), 5, 'map is populated with 5 items');
+  }
+
+  @include test('z-index [mixin]') {
+    @include assert('get z-index based on the key name') {
+      @include input {
+        @include z-index(main-page-header);
+        @include z-index(select);
+        @include z-index(selectDropbox);
+        @include z-index(externalPopup);
+        @include z-index(popup-overlay);
+      }
+      @include expect {
+        z-index: 1;
+        z-index: 2;
+        z-index: 2;
+        z-index: 100;
+        z-index: 101;
+      }
+    }
+  }
+}
+
+@include test-module('z-index-sass init with custom start point') {
+  @import "../lib/z-index";
+
+  @include test('z-index-init [mixin]') {
+    @include z-index-init(main-page-header popup popup-overlay, -1);
+    @include assert-equal(length(map-keys($z-index-map)), 3, 'map is populated with 3 items');
+  }
+
+  @include test('z-index [mixin]') {
+    @include assert('get z-index based on the key name') {
+      @include input {
+        @include z-index(main-page-header);
+        @include z-index(popup-overlay);
+      }
+      @include expect {
+        z-index: -1;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+@include report;

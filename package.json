@@ -1,0 +1,31 @@
+{
+  "name": "z-index-sass",
+  "version": "0.1.0",
+  "description": "SASS / SCSS helper to handle lots of z-indices in big applications",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smnbbrv/z-index-sass.git"
+  },
+  "keywords": [
+    "z-index",
+    "z-index map",
+    "sass",
+    "scss"
+  ],
+  "author": "smnbbrv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smnbbrv/z-index-sass/issues"
+  },
+  "homepage": "https://github.com/smnbbrv/z-index-sass#readme",
+  "devDependencies": {
+    "sass-true": "^2.0.3"
+  }
+}

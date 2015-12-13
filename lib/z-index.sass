@@ -1,0 +1,33 @@
+@mixin z-index-init($array, $start: 1)
+  $map: ()
+  $z-index-iterator: $start - 1
+
+  @each $z-index in $array
+    @if type-of($z-index) == 'map'
+      @each $key, $value in $z-index
+        @if $z-index-iterator >= $value
+          @error 'z-index for "#{$key}" is too small compare to the generated one'
+
+        $z-index-iterator: $value
+        $map: map-merge($map, ($key: $z-index-iterator))
+    @else if type-of($z-index) == 'list'
+      $z-index-iterator: $z-index-iterator + 1
+
+      @each $one-level-item in $z-index
+        $map: map-merge($map, ($one-level-item: $z-index-iterator))
+    @else
+      $z-index-iterator: $z-index-iterator + 1
+      $map: map-merge($map, ($z-index: $z-index-iterator))
+
+  $z-index-map: $map !global
+
+@mixin z-index($name)
+  @if not variable-exists(z-index-map)
+    @error 'z-index library is not initialized, use z-index-init to initialize it'
+
+  $value: map-get($z-index-map, $name)
+
+  @if $value == null
+    @error 'z-index for "#{$name}" is not declared'
+  @else
+    z-index: map-get($z-index-map, $name)
