@@ -2,7 +2,7 @@
   "name": "z-index-sass",
   "version": "0.1.0",
   "description": "SASS / SCSS helper to handle lots of z-indices in big applications",
-  "main": "index.js",
+  "main": "lib/_z-index.sass",
   "directories": {
     "test": "test"
   },
@@ -15,7 +15,7 @@
   },
   "keywords": [
     "z-index",
-    "z-index map",
+    "map",
     "sass",
     "scss"
   ],

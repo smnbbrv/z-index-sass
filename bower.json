@@ -1,13 +1,12 @@
 {
   "name": "z-index-sass",
   "description": "SASS / SCSS helper to handle lots of z-indices in big applications",
-  "main": "index.js",
+  "main": "lib/_z-index.sass",
   "authors": [
     "smnbbrv"
   ],
   "license": "MIT",
   "keywords": [
-    "z-index",
     "z-index",
     "map",
     "sass",

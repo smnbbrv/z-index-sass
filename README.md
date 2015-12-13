@@ -4,9 +4,15 @@ SASS / SCSS helper to handle lots of z-indices in big applications.
 
 ## Installation
 
-Just import lib/z-index.sass:
+Install with bower:
 
-    @import "lib/z-index";
+    bower install z-index-sass --save
+
+or just copy the file from lib/z-index.sass.
+
+Then just import the file (you can find it in bower_components folder if installed with bower):
+
+    @import "/path/to/lib/z-index";
 
 ## Why
 
