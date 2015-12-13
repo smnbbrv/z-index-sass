@@ -81,7 +81,7 @@ Where `settingsList` is a list of `zIndexItem`. zIndexItems are generated in the
 `zIndexItem` is one of the following:
 - just a variable name
 - a list of variables which will get the same z-index (one-level elements)
-- a map of 1 kez-value entry, key is a variable name, value is a custom z-index to be used with this variable name. This is helpful when you need to work with some library which already has some z-index value you need to take into account. Just register a variable for that library and all the zIndexItems specified after will be generated with a bigger value. Use it only when it is really necessary, it should be exception but not the rule.
+- a map of 1 key-value entry, key is a variable name, value is a custom z-index to be used with this variable name. This is helpful when you need to work with some library which already has some z-index value you need to take into account. Just register a variable for that library and all the zIndexItems specified after will be generated with a bigger value. Use it only when it is really necessary, it should be exception but not the rule.
 
 ### Use z-index
 
